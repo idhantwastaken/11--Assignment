@@ -27,13 +27,12 @@ class Kaprekar{
         Kaprekar ob = new Kaprekar();
         
         System.out.println("Enter a number");
-        // int a = sc.nextInt();
-        for(int a = 0; a <= 900000000; a += 10){
-            if(ob.iskaprekar(a))
-            System.out.println(a + " is a Kaprekar Number");
-            // else
-            // System.out.println(a + " is not a Kaprekar Number");
-        }
+        int a = sc.nextInt();
+        if(ob.iskaprekar(a))
+        System.out.println(a + " is a Kaprekar Number");
+        else
+        System.out.println(a + " is not a Kaprekar Number");
+        
         sc.close();
     } 
 } 
