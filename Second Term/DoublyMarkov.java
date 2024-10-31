@@ -24,12 +24,13 @@ class DoublyMarkov {
     }
     boolean isDoublyMarkov(){
         for (int i = 0; i < N; i++) {
-            int sum1 = 0; int sum2 = 0;
+            double sum1 = 0; double sum2 = 0;
             for (int j = 0; j < N; j++) {
                 sum1 += A[i][j];
                 sum2 += A[j][i];
             }
             if(sum1 != 1 || sum2 != 1){
+                System.out.println(sum1 + " "+ sum2);
                 return false;
             }
         }
