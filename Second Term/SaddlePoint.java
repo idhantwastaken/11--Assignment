@@ -17,7 +17,7 @@ class SaddlePoint{
     
     void findSaddlePoint(){
         int min, max;
-        boolean contains_saddle = false;
+        boolean containsSaddle = false;
         for(int i = 0; i < N; i++){
             for (int j = 0; j < N; j++) {
                 min = A[i][j];
@@ -28,11 +28,11 @@ class SaddlePoint{
                 }
                 if(min == max){
                     System.out.println("The sadle point is " + min);
-                    contains_saddle=true;
+                    containsSaddle=true;
                 }
             }
         }
-        if(!contains_saddle) System.out.println("No sadle point");
+        if(!containsSaddle) System.out.println("No sadle point");
     }
     public static void main(String args[]){
         SaddlePoint ob = new SaddlePoint();

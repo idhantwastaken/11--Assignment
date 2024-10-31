@@ -1,42 +1,48 @@
 import java.util.*;
 class DoublyMarkov {
-    public static void main(String[] args) {
+    double A[][]; int N;
+    void getArray(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the matrix");
-        int N = sc.nextInt();
+        N = sc.nextInt();
         while (N < 3 || N > 9) {
             System.out.println("Size of the Matrix must be greater than 2 & less than 10. Try again");
             N = sc.nextInt();
         }
-        double M[][] = new double[N][N];
+        A = new double[N][N];
         System.err.println("Enter " + (N * N) + " elements");
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                M[i][j] = sc.nextDouble();
-                while (M[i][j] < 0) {
+                A[i][j] = sc.nextDouble();
+                while (A[i][j] < 0) {
                     System.out.println("Matrix elements must be positive. Try again");
-                    M[i][j] = sc.nextDouble();
+                    A[i][j] = sc.nextDouble();
                 }
             }
         }
-        
-        boolean isMarkov = false;
+        sc.close();
+    }
+    boolean isDoublyMarkov(){
         for (int i = 0; i < N; i++) {
             int sum1 = 0; int sum2 = 0;
             for (int j = 0; j < N; j++) {
-                sum1 += M[i][j];
-                sum2 += M[j][i];
+                sum1 += A[i][j];
+                sum2 += A[j][i];
             }
             if(sum1 != 1 || sum2 != 1){
-                System.out.println("The matrix is not Doubly Markov");
-                isMarkov = false;
-                break;
+                return false;
             }
-            else isMarkov = true;
         }
-        if (isMarkov) {
-            System.out.println("Matrix is Doubly Markov");
-        }
-        sc.close();
+        return true;
+    }
+    public static void main(String[] args) {
+        DoublyMarkov ob = new DoublyMarkov();
+        ob.getArray();
+        boolean isDoublyMarkov = ob.isDoublyMarkov();
+        if(isDoublyMarkov)
+        System.out.println("The matrix is a Doubly Markov matrix");
+        else
+        System.out.println("The matrix is not a Doubly Markov matrix");
+        
     }
 }
