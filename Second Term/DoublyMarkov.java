@@ -30,7 +30,6 @@ class DoublyMarkov {
                 sum2 += A[j][i];
             }
             if(sum1 != 1 || sum2 != 1){
-                System.out.println(sum1 + " "+ sum2);
                 return false;
             }
         }
