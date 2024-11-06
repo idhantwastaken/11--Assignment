@@ -24,12 +24,12 @@ class DoublyMarkov {
     }
     boolean isDoublyMarkov(){
         for (int i = 0; i < N; i++) {
-            double sum1 = 0; double sum2 = 0;
+            double sumR = 0; double sumC = 0;
             for (int j = 0; j < N; j++) {
-                sum1 += A[i][j];
-                sum2 += A[j][i];
+                sumR += A[i][j];
+                sumC += A[j][i];
             }
-            if(sum1 != 1 || sum2 != 1){
+            if(sumR != 1 || sumC != 1){
                 return false;
             }
         }
@@ -38,11 +38,9 @@ class DoublyMarkov {
     public static void main(String[] args) {
         DoublyMarkov ob = new DoublyMarkov();
         ob.getArray();
-        boolean isDoublyMarkov = ob.isDoublyMarkov();
-        if(isDoublyMarkov)
+        if(ob.isDoublyMarkov())
         System.out.println("The matrix is a Doubly Markov matrix");
         else
         System.out.println("The matrix is not a Doubly Markov matrix");
-        
     }
 }
