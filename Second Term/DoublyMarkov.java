@@ -10,7 +10,7 @@ class DoublyMarkov {
             N = sc.nextInt();
         }
         A = new double[N][N];
-        System.err.println("Enter " + (N * N) + " elements");
+        System.out.println("Enter " + (N * N) + " elements");
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 A[i][j] = sc.nextDouble();

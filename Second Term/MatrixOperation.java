@@ -6,12 +6,12 @@ public class MatrixOperation {
         System.out.println("Enter the size of the array");
         M = sc.nextInt();
         N = sc.nextInt();
-        while(M < 2 || M > 10) {
-            System.out.println("The number of rows must be greater than 2 and less tan 10.Try Again");
+        while(M <= 2 || M >= 10) {
+            System.out.println("The number of rows must be greater than 2 and less than 10.Try Again");
             M = sc.nextInt();
         }
-        while(N < 2 || N > 10) {
-            System.out.println("The number of must be greater than 2 and less tan 10.Try Again");
+        while(N <= 2 || N >= 10) {
+            System.out.println("The number of must be greater than 2 and less than 10.Try Again");
             N = sc.nextInt();
         }
         A = new int[M][N];
@@ -23,19 +23,16 @@ public class MatrixOperation {
         }
     }
     void rotation() {
-        int p1 = 0, p2 = M - 1, product = M * N;
-        for(int i = 0; i < product;){
+        for(int i = 0; i < M; i++){
             for(int j = 0; j < N; j++) {
-                int temp = A[p1][j];
-                A[p1][j] = A[p2][j];
-                A[p2][j] = temp;
-                i++;
+                int temp = A[0][j];
+                A[0][j] = A[M - 1 - i][j];
+                A[M - 1 - i][j] = temp;
             }
-            p2--;
         }
     }
     void greatestElement(){
-        int max = A[0][0], row = 0, col = 0;
+        int max = 0, row = 0, col = 0;
         for(int i = 0; i < M; i++){
             for(int j = 0; j < N; j++) {
                 if(A[i][j] > max){
@@ -45,7 +42,7 @@ public class MatrixOperation {
                 }
             }
         }
-        System.out.println("Highest element: " + max + " Row: " + row + " Column: " + col);
+        System.out.println("Highest element: " + max + " - Row: " + row + ", Column: " + col);
     }
     void display(){
         for (int i = 0; i < M; i++) {
