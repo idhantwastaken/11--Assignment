@@ -18,9 +18,10 @@ class Snowball{
             int reqLength = 0;
             boolean a = true;
             for (int i = 0; i < obj.countTokens(); i++) {
-                if(i == 0) reqLength = obj.nextToken().length() + 1;
+                String st = obj.nextToken();
+                if(i == 0) reqLength = st.length() + 1;
 
-                if(obj.nextToken().length() == reqLength) {
+                if(st.length() == reqLength) {
                     reqLength++;
                 }
                 else {
