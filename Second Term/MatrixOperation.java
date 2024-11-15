@@ -11,16 +11,14 @@ public class MatrixOperation {
             M = sc.nextInt();
         }
         while(N <= 2 || N >= 10) {
-            System.out.println("The number of must be greater than 2 and less than 10.Try Again");
+            System.out.println("The number of columns must be greater than 2 and less than 10.Try Again");
             N = sc.nextInt();
         }
         A = new int[M][N];
         System.out.println("Enter " + (M * N) + " numbers");
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < M; j++) {
+        for (int i = 0; i < M; i++) 
+            for (int j = 0; j < M; j++) 
                 A[i][j] = sc.nextInt();
-            }
-        }
     }
     void rotation() {
         for(int i = 0; i < M; i++){
@@ -46,9 +44,8 @@ public class MatrixOperation {
     }
     void display(){
         for (int i = 0; i < M; i++) {
-            for (int j = 0; j < M; j++) {
+            for (int j = 0; j < M; j++) 
                 System.out.print(A[i][j] + "\t");
-            }
             System.out.println();
         }
     }
