@@ -19,6 +19,7 @@ public class MatrixOperation {
         for (int i = 0; i < M; i++) 
             for (int j = 0; j < M; j++) 
                 A[i][j] = sc.nextInt();
+        sc.close();
     }
     void rotation() {
         for(int i = 0; i < M; i++){

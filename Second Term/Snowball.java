@@ -6,8 +6,9 @@ class Snowball{
     void getSentence(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a sentence");
-        str = sc.nextLine().trim();
+        str = sc.nextLine();
         obj  = new StringTokenizer(str, " ,.?");
+        sc.close();
     }
 
     void isSnowballSentence(){
@@ -20,7 +21,6 @@ class Snowball{
             for (int i = 0; i < obj.countTokens(); i++) {
                 String st = obj.nextToken();
                 if(i == 0) reqLength = st.length() + 1;
-
                 if(st.length() == reqLength) {
                     reqLength++;
                 }

@@ -1,23 +1,23 @@
-import java.util.*;
+import java.util.Scanner;
 class Goldbach{
     boolean isPrime(int a){
-        for(int i = 2; i <= a / 2; i++){
-            if(a % i == 0) {
-                return false;
-            }
+        if(a <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(a); i++) {
+            if(a % i == 0)
+            return false;
         }
         return true;
     }
-    void oddnumberpairs(int a){
-        System.out.println("Odd number pairs:");
+    void oddprimepairs(int a){
+        System.out.println("Odd prime number pairs:");
         for(int i = 3; i <=  a / 2; i++){
             if(isPrime(i)){
-                if(isPrime(a - 1))
+                if(isPrime(a - i))
                     System.out.println(i + ", " + (a - i));
             }
         }
     }
-    public static void main(){
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         Goldbach ob = new Goldbach();
         System.out.println("Enter an even number");
@@ -27,8 +27,9 @@ class Goldbach{
             N = sc.nextInt();
         }
         if(N % 2 == 0){
-            ob.oddnumberpairs(N);
+            ob.oddprimepairs(N);
         }
-        else System.out.println("Entered number must be even");
+        else System.out.println("Entered number must be even.");
+        sc.close();
     }
 }
