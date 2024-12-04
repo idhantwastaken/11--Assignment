@@ -6,7 +6,7 @@
 */
 import java.util.Scanner;
 class KeywordCipher {
-    String getCipher(String key) {
+    String generateCipher(String key) {
         String cipher = "";
         boolean occured[] = new boolean[26];
         for (int i = 0; i < key.length(); i++) {
@@ -24,13 +24,12 @@ class KeywordCipher {
         return cipher;
     }
     void decrypt(String code, String key){
-        String cipher = getCipher(key);
+        String cipher = generateCipher(key);
         String decodedtxt = "";
         for (int i = 0; i < code.length(); i++) {
             char ch = code.charAt(i);
-            if (Character.isLetter(ch)) {
-                decodedtxt += cipher.charAt((int)(ch - 'A'));
-            }
+            if (Character.isLetter(ch)) 
+                decodedtxt += (char)(cipher.indexOf(ch) + 65);
             else decodedtxt += ch;
         }
         System.out.println("Decrypted String: " + decodedtxt);
@@ -41,7 +40,7 @@ class KeywordCipher {
         KeywordCipher ob = new KeywordCipher();
         System.out.print("Enter the coded text:");
         String codedtxt = sc.nextLine();
-        System.out.print("Enter the the Keyword:");
+        System.out.print("Enter the Keyword:");
         String keyword = sc.next();
         ob.decrypt(codedtxt.toUpperCase(),keyword.toUpperCase());
         sc.close();
