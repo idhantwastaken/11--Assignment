@@ -1,9 +1,3 @@
-/*
-* It is a form of enryption technique. A keyword is used as the key. It determines the letter matching cipher alphabet.
-* Repeats of letters in word are removed, then the cipher alphabet is generated with the keyword matching to A,B,C etc until the keyword is used up,
-* whereupon the rest of the cipher text letters are used in alphabetical order excluding those already in the key
-* Write  a program to accept a coded text in uppercase and a keyword using the above technique decrypt the text & display.
-*/
 import java.util.Scanner;
 class KeywordCipher {
     String generateCipher(String key) {
@@ -17,7 +11,7 @@ class KeywordCipher {
                 occured[index] = true;
             }
         }
-        for (int i = 0; i < occured.length; i++) {
+        for (int i = 0; i < 26; i++) {
             if(!occured[i])
                 cipher += (char)(i + 65);
         }
