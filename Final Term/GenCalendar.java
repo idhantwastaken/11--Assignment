@@ -23,7 +23,7 @@ public class GenCalendar {
     
     void generate() {
         isLeapYear();
-        int mno = 0, dno = 0;
+        int mno = -1, dno = -1;
         String div = "------------------------------------------------------";
         for (int i = 0; i < month.length; i++)
             if(m.equalsIgnoreCase(month[i]))
@@ -33,22 +33,18 @@ public class GenCalendar {
             if(mfirst.equalsIgnoreCase(weekday[i]))
                 dno = i;
         
-        if (dno == 0 || mno == 0){
+        if (dno == -1 || mno == -1){
             System.out.println("Invalid Month / Weekday");
         }
         else{
-            // System.out.println(div);                replaced by line 40
-            // System.out.println("  " + month[mno] + " " + y);
-            // System.out.println(div);
-            System.out.printf("%s\n%10s%5d\n%s\n", div, month[mno], y, div);
+            System.out.println(div + "\n  " + month[mno] + " " + y + "\n" + div);
             System.out.println("  SUN\t  MON\t  TUE\t  WED\t  THU\t  FRI\t  SAT\n" + div);
             
             for (int i = 1; i <= days[mno]; i++) {
                 if(i == 1)
                     for (int j = 0; j < dno; j++)
                         System.out.print("\t");
-                
-                System.out.printf("%4s\t", i);
+                System.out.print("   " + i + "\t");
                 if ((i + dno) % 7 == 0)
                     System.out.println("\n" + div);
             }

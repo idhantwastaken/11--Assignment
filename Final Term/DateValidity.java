@@ -9,7 +9,7 @@ public class DateValidity {
         String date = sc.nextLine().trim();
         d = Integer.parseInt(date.substring(0,2));
         m = Integer.parseInt(date.substring(3,5));
-        y = Integer.parseInt(date.substring(6,10));
+        y = Integer.parseInt(date.substring(6));
         sc.close();
     }
     boolean isLeapYear(){
