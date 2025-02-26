@@ -16,13 +16,7 @@ public class GenCalendar {
         sc.close();
     }
     
-    void isLeapYear(){
-        if(y % 4 == 0 && y % 100 != 0 || y % 400 == 0)
-            days[1] = 29;
-    }
-    
     void generate() {
-        isLeapYear();
         int mno = -1, dno = -1;
         String div = "------------------------------------------------------";
         for (int i = 0; i < month.length; i++)
@@ -33,9 +27,10 @@ public class GenCalendar {
             if(mfirst.equalsIgnoreCase(weekday[i]))
                 dno = i;
         
-        if (dno == -1 || mno == -1){
+        if (dno == -1 || mno == -1)
             System.out.println("Invalid Month / Weekday");
-        }
+        if(y % 4 == 0 && y % 100 != 0 || y % 400 == 0)
+            days[1] = 29;
         else{
             System.out.println(div + "\n  " + month[mno] + " " + y + "\n" + div);
             System.out.println("  SUN\t  MON\t  TUE\t  WED\t  THU\t  FRI\t  SAT\n" + div);
