@@ -8,17 +8,17 @@ public class GenCalendar {
     
     void  input() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter year and month");
+        System.out.print("Enter year and month");
         y = sc.nextInt();
         m = sc.next();
-        System.out.println("Enter first day of month");
+        System.out.print("Enter first day of month");
         mfirst = sc.next();
         sc.close();
     }
     
     void isLeapYear(){
         if(y % 4 == 0 && y % 100 != 0 || y % 400 == 0)
-        days[1] = 29;
+            days[1] = 29;
     }
     
     void generate() {

@@ -18,9 +18,7 @@ public class DateValidity {
         return false;
     }
     boolean isValidDate(){
-        if(y < 1800 || y > 9999)
-            return false;
-        if(m < 1 || m > 12)
+        if(y < 1800 || y > 9999 || m < 1 || m > 12)
             return false;
         if(m == 2 && isLeapYear())
             days[1] = 29;

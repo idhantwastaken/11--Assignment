@@ -10,7 +10,7 @@ public class AddDate {
         d = Integer.parseInt(date.substring(0,2));
         m = Integer.parseInt(date.substring(3,5));
         y = Integer.parseInt(date.substring(6));
-        System.out.println("Enter number of days: ");
+        System.out.print("Enter number of days: ");
         n = sc.nextInt();
         sc.close();
     }
@@ -22,6 +22,8 @@ public class AddDate {
     }
 
     boolean isValidDate(){
+        if (isLeapYear())
+            days[1] = 29;
         if(m < 1 || m > 12)
             return false;
         if(d < 1 || d > days[m - 1])
