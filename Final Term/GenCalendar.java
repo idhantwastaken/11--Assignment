@@ -1,3 +1,4 @@
+//QUESTION 3
 import java.util.Scanner;
 public class GenCalendar {
     int y;
@@ -27,10 +28,10 @@ public class GenCalendar {
             if(mfirst.equalsIgnoreCase(weekday[i]))
                 dno = i;
         
-        if (dno == -1 || mno == -1)
-            System.out.println("Invalid Month / Weekday");
         if(y % 4 == 0 && y % 100 != 0 || y % 400 == 0)
             days[1] = 29;
+        if (dno == -1 || mno == -1)
+            System.out.println("Invalid Month / Weekday");
         else{
             System.out.println(div + "\n  " + month[mno] + " " + y + "\n" + div);
             System.out.println("  SUN\t  MON\t  TUE\t  WED\t  THU\t  FRI\t  SAT\n" + div);

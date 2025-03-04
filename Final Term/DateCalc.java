@@ -1,16 +1,17 @@
+//QUESTION 4
 import java.util.Scanner;
 public class DateCalc {
-    int d, m = 1, y, dafter, n;
+    int d, m = 1, y, date, n;
     int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
     void getDate() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the Day number: ");
-        n = sc.nextInt();
+        date = sc.nextInt();
         System.out.print("Enter the year: ");
         y = sc.nextInt();
-        System.out.print("Enter the date after : ");
-        dafter = sc.nextInt();
+        System.out.print("To find the date after : ");
+        n = sc.nextInt();
         sc.close();
     }
     
@@ -40,13 +41,13 @@ public class DateCalc {
     }
     
     void display() {
-        if (n < 1 || n > 366) 
+        if (date < 1 || date > 366) 
             System.out.println("Invalid Date");
-        else if (dafter < 1 || dafter > 100) 
+        else if (n < 1 || n > 100) 
             System.out.println("Invalid Date after");
         else {
-            System.out.println("Entered date: " + findDate(n));
-            System.out.println("Date after " + dafter + " days: "  + findDate(dafter));
+            System.out.println("Entered date: " + findDate(date));
+            System.out.println("Date after " + n + " days: "  + findDate(n));
         }
     }
     
